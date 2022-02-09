@@ -1,0 +1,1 @@
+coinpaprika==0.1.0
