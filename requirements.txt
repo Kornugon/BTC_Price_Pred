@@ -1,14 +1,17 @@
 coinpaprika==0.1.0
 
+
 pandas==1.2.4
 numpy==1.20.1
-
 matplotlib==3.3.4
+
 
 sklearn==0.24.1
 statsmodels==0.12.2
 pmdarima==1.8.5
 
+
 xgboost==1.5.2
+
 
 tensorflow==2.8.0
