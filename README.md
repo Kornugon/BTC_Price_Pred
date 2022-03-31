@@ -2,65 +2,53 @@
 ### Bootcamp Data Science PRO - Kodołamacz - DS 11/09/2021
 
 
-This notebook contains sections as below:
+Complete project consists of three notebooks with sections as below.
 
 1. Abstract
-2. Notebook introduction
-3. Data description
-4. Gathering data
-5. Data preprocessing
-6. ARIMA Model
-   - 6.1. ARIMA Model  =>  complete data + ln(data)
-   - 6.2. ARIMA Model  =>  complete data + without ln(data)
-   - 6.3. ARIMA Model  =>  data start from 2018-01-01 + ln(data)
-   - 6.4. ARIMA Model  =>  data start from 2021-01-01 + ln(data)
-   - 6.5. ARIMA Model  =>  summary
-7. XGBoost
-   - 7.1. XGBRegressor  =>  data start from 2018-01-01
-   - 7.2. XGBRegressor  =>  data start from 2021-01-01
-   - 7.3. XGBRegressor  =>  summary
-8. LSTM Model
-   - 8.1. LSTM  =>  data start from 2018-01-01
-   - 8.2. LSTM  =>  data start from 2021-01-01
-   - 8.3. LSTM  =>  summary
-9. Notebook summary
+2. Data description
+3. Gathering data
+4. Data preprocessing
+5. ARIMA Model
+    - 5.1. ARIMA  =>  Introduction
+    - 5.2. ARIMA Model  =>  function definition
+    - 5.3. ARIMA Model  =>  Forecasting
+        - complete data
+        - data start from 2018-01-01
+        - data start from 2021-01-01
+    - 5.4. ARIMA Model  =>  summary
+6. XGBoost
+    - 6.1. XGBRegressor  =>  Introduction
+    - 6.2. XGBRegressor  =>  function definition
+    - 6.3. XGBRegressor  =>  Forecasting
+        - complete data
+        - data start from 2018-01-01
+        - data start from 2021-01-01
+    - 6.4. XGBRegressor  =>  summary
+7. LSTM Model
+    - 7.1. LSTM  =>  Introduction
+    - 7.2. LSTM  =>  function definition
+    - 7.3. LSTM  =>  Forecasting
+        - complete data
+        - data start from 2018-01-01
+        - data start from 2021-01-01
+    - 7.4. LSTM  =>  summary
+8. Project summary
 
 
 ## 1. Abstract
 
-Bitcoin is a cryptocurrency, created in 2009. Bitcoin system is a set of decentralized nodes with the bitcoin code, that contains collection of transactions. A blockchain is a distributed database that is shared among the nodes of a computer network. As a database, a blockchain stores information in digital format. All the computers running the blockchain has the same list of blocks and transactions, and can see all these new blocks being filled with new bitcoin transactions.
+In "BTC_Price_Prediction - ARIMA.ipynb" notebook, this chapter contains short Bitcoin description and why price forecasting may be helpful.
+Here, in readme file, I have placed screenshot from one of the predictions made in this project.
+Enjoy :)
 
-The original purpose of Bitcoin (BTC in short) is to allow two people to exchange value directly (using peer-to-peer technology), without centralbanks or goverments, regardless where they are. What this means is that Bitcoin blockchain is decentralized -  there is no centralized controll on this network.
+![Screenshot](LSTM_Screen.jpg)
 
-Responsibility for processing transactions on the blockchain is done by - so called - Miners. "Mining" is performed using sophisticated hardware that solves an extremely complex math problem. The first computer to find the solution to the problem receives the next block of bitcoins, and the process begins again. A newly mined block of bitcoins now can be used to store a value or be sold.
+Project notebooks:
+- "01_BTC_Price_Prediction - ARIMA.ipynb"
+- "02_BTC_Price_Prediction - XGBoost.ipynb"
+- "03_BTC_Price_Prediction - LSTM.ipynb"
 
-The amount of bitcoins is predetermined. Each and every Bitcoin had to be mined previously. For every four years, the amount of bitcoins that can be mined, decreeses by half. That is so called halving of Bitcoin. The next halving will be in 2024, and means that miners will receive half of current revard for processing transactions.
-
-Decentralization, predetermined amount of the cryptocurrency and current dificulty of gaining new Bitcoins by miners, is the reason why Bitcoin is so popular. Some people even call it a "digital gold". Popularity of Bitcoin makes the bitcoin market very volatile, that is much higher compared to traditional currencies. Volatile marcet, may be an opportunity for speculation and other advantages of bitcoin, may lead to long term, store of value strategy.
-
-Popularity of bitcoin has led invest founds to gain digitall assets in their wallets. This may disturb Bitcoin, four years halving cycles.
-
-Predicting Bitcoin price based on historical data should be accounted for by the prism of marcet sentiment, current bitcoin phase and movement of large capital from invest founds and current big holders. In General - DO NOT USE THIS NOTEBOOK FOR INVESTING.
-
-
-## 2. Notebook introduction
-
-This notebook was created to predict the Bitcoin price (in USD) using the ARIMA, XGBoost and LSTM models.
-Each model used a different range of data to generate forecasts. Each model also requires a different approach to the dataset.
-The mean square error (RMSE) was used to evaluate the performance of the model - it should be as low as possible.
-
-The data variants (ranges) used to train the models are the main difference between the results of a given model. Reason for that is to show how the training results and plotting, varies from other variants and estimate the best approach for the data, that is time series.
-
-Another difference is the optimization of the parameters. Auto_ARIMA was used for ARIMA, GridSearchCV was used for XGBoost, and the variants of the LSTM model contain the same parameters that have been empirically optimized.
-
-The forecast is within the range of the test data, there is no "walk-forward" approach in this notebook.
-
-Training data is the first 80% of the dataset and the rest is in the test datasets.
-
-At the end of the notebook, a summary of the task is presented along with a graph of the RMSE results of the models.
-
-
-## 3. Data description
+## 2. Data description
 
 Historical data price has been taken from Coinpaprika API Python Client.
 - Web Site - https://coinpaprika.com/waluta/btc-bitcoin/
